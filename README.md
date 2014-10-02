@@ -1,5 +1,6 @@
 # omion
  [Om](https://github.com/swannodette/om) for fun and profit!
+ Currently, this is a little scratchpad where you can build an html page.
 
 # Get started developing
 
