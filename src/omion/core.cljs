@@ -19,7 +19,7 @@
     (render [this]
       (html [:div
               [:div
-                [:h1 "My scratchpad"]
+                [:h1 "My scratchpad"] [:p "ctrl+enter to update"]
                 (cm/markup "bot-mirror" [:p "My scratchings"])]
               [:div.scratchpad (:scratchpad @state)]]))
     om/IDidMount
