@@ -5,23 +5,30 @@
             [sablono.core :as html :refer-macros [html]]
             [omion.codemirror :as cm]))
 
+(def state (atom nil))
+
 (defmulti handle :type)
 
 (defmethod handle :codemirror/value-poke [message]
-  (let [bot (cljs.reader/read-string (:value message))]
-    (.log js/console (str "got new value from codemirror: " (pr-str bot)))))
+  (let [cm-value (cljs.reader/read-string (:value message))]
+    (swap! state #(assoc % :scratchpad cm-value))))
 
 (defn widget [data owner]
   (reify
     om/IRender
     (render [this]
-      (html [:div [:h1 "My scratchboard"] (cm/markup "bot-mirror" {:anykey :anyval})]))
+      (html [:div
+              [:div
+                [:h1 "My scratchpad"]
+                (cm/markup "bot-mirror" [:p "My scratchings"])]
+              [:div.scratchpad (:scratchpad @state)]]))
     om/IDidMount
     (did-mount [this]
       (let [ch (chan)]
         (cm/init! "bot-mirror" ch)
         (go-loop [message (<! ch)]
           (recur (do (handle message)
-                     (<! ch))))))))
+                   (om/refresh! owner)
+                   (<! ch))))))))
 
 (om/root widget {:not :used} {:target (. js/document (getElementById "om-application-root"))})

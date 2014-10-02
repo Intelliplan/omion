@@ -4,8 +4,8 @@
 # Get started developing
 
  * install [leiningen](http://leiningen.org/)
- * `lein deps` (from git repo root)
- * `lein cljsbuild auto`
+ * `lein cljsbuild auto` (from git repo root)
+ * edit the source in `src/omion`
  * load `dev/index.html` in browser
 
 ## License
