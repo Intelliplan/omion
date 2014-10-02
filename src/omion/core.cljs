@@ -18,9 +18,12 @@
     om/IRender
     (render [this]
       (html [:div
-              [:div
-                [:h1 "My scratchpad"] [:p "ctrl+enter to update"]
-                (cm/markup "bot-mirror" [:p "My scratchings"])]
+              [:div.text-muted
+                [:h1 "My scratchpad"]
+                [:p "edit page code, ctrl+enter to update"]
+                (cm/markup "bot-mirror" [:div
+                                          [:p "My scratchings"]
+                                          [:button.btn "click me"]])]
               [:div.scratchpad (:scratchpad @state)]]))
     om/IDidMount
     (did-mount [this]
