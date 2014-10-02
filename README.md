@@ -7,7 +7,3 @@
  * `lein cljsbuild auto` (from git repo root)
  * edit the source in `src/omion`
  * load `dev/index.html` in browser
-
-## License
-
-Copyright © 2014 Marcus Holst
