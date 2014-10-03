@@ -2,6 +2,13 @@
  [Om](https://github.com/swannodette/om) for fun and profit!
  Currently, this is a little scratchpad where you can build an html page.
 
+ The project demonstrates:
+ * basic ClojureScript development (sourcemaps, auto compilation etc.)
+ * ClojureScript integration with javascript libraries (bootstrap and codemirror)
+ * data model to HTML rendering
+ * client side HTML generation
+ * The application state model in Om
+
 # Get started developing
 
  * install Java (on linux)
