@@ -5,6 +5,7 @@
 # Get started developing
 
  * install Java (on linux)
+ 
  ```bash
  sudo yum -y install java-1.7.0-openjdk-devel
  export JAVA_HOME=/etc/alternatives/jre
