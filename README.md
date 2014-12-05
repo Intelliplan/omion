@@ -1,6 +1,7 @@
 # omion
- [Om](https://github.com/swannodette/om) for fun and profit!
- Currently, this is a little scratchpad where you can build an html page.
+[Om](https://github.com/swannodette/om) for fun and profit!
+Compare with [reapoc](https://github.com/Intelliplan/reapoc), which uses a similar technology.
+Currently, this is a little scratchpad where you can build an html page.
 
  The project demonstrates:
  * basic ClojureScript development (sourcemaps, auto compilation etc.)
