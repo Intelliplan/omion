@@ -22,4 +22,5 @@ logfile
 .nrepl-port
 .DS_Store
 pom.*
-*/out/*
+*.swp
+dev/out/*
